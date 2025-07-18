@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiénes Somos | Sip and Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --morado: #cbaacb;
+      --verde: #a8e6cf;
+      --fuccia: #ff7eb9;
+      --naranja: #ffd3b6;
+      --fondo: #fff9f9;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: var(--fondo);
+      margin: 0;
+      padding: 1rem 1rem 3rem;
+      color: var(--morado);
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem 0 0.3rem;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: var(--morado);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+      margin: 0.3rem 0 1.5rem 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--morado);
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--fuccia);
+    }
+
+    section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--morado);
+    }
+
+    p.quienes-texto {
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+    p.quienes-texto.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      max-width: 700px;
+      margin: 2rem auto 3rem;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1.5px solid var(--naranja);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .trivia {
+      background: var(--fondo);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      border: 2px solid var(--naranja);
+      color: var(--morado);
+    }
+    .trivia h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--morado);
+      font-weight: 700;
+      text-align: center;
+    }
+    .trivia p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .trivia button {
+      background: linear-gradient(45deg, var(--verde), var(--fuccia), var(--naranja));
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      font-size: 1rem;
+      margin: 0.2rem 0.6rem 1rem 0;
+      padding: 10px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .trivia button:hover:not(.selected) {
+      transform: scale(1.05);
+      box-shadow: 0 0 8px var(--fuccia);
+    }
+    .trivia button.selected {
+      background: var(--fuccia);
+      box-shadow: 0 0 10px var(--fuccia);
+      cursor: default;
+    }
+    .trivia button:disabled {
+      cursor: default;
+    }
+
+    #resultado {
+      margin-top: 1.8rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      color: var(--fuccia);
+      font-style: italic;
+      display: none;
+    }
+
+    /* Botones flotantes */
+    .boton-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    .boton-flotante.whatsapp {
+      right: 90px;
+      background-color: #25d366;
+    }
+    .boton-flotante.whatsapp:hover {
+      background-color: #1ebe57;
+    }
+    .boton-flotante.whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    .boton-flotante.carrito {
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      line-height: 55px;
+      background-color: var(--verde);
+      right: 20px;
+    }
+    .boton-flotante.carrito:hover {
+      background-color: #8ad0b6;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+  <header>
+    <h1>Quiénes Somos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html">Ubicación</a></li> <!-- Enlace corregido -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌿 Nuestra Historia</h2>
+      <p class="quienes-texto">
+        En <strong>Sip and Revive</strong> nacimos con la pasión de ofrecer bebidas naturales y saludables que alegren tu día.
+      </p>
+      <p class="quienes-texto">
+        Somos un equipo dedicado a combinar sabor y bienestar en cada producto.
+      </p>
+      <p class="quienes-texto">
+        Más que una marca, somos una familia que crece contigo, compartiendo momentos y sonrisas con cada sorbo.
+      </p>
+    </section>
+
+    <!-- Trivia Interactiva -->
+    <section class="trivia">
+      <h3>🎉 ¿Cuánto sabes de Sip and Revive?</h3>
+      <div id="preguntas">
+        <p>1. ¿Qué nos inspira a crear nuestras bebidas?</p>
+        <button onclick="responder(0, 1, this)">La moda</button>
+        <button onclick="responder(0, 2, this)">El bienestar y alegría</button>
+        <button onclick="responder(0, 3, this)">La competencia</button>
+
+        <p>2. ¿Qué buscamos ofrecer con cada sorbo?</p>
+        <button onclick="responder(1, 1, this)">Cafeína</button>
+        <button onclick="responder(1, 2, this)">Momentos de felicidad y salud</button>
+        <button onclick="responder(1, 3, this)">Solo azúcar</button>
+
+        <p>3. ¿Cómo nos gusta ver a nuestra comunidad?</p>
+        <button onclick="responder(2, 1, this)">Aburrida y cansada</button>
+        <button onclick="responder(2, 2, this)">Saludable, feliz y con energía</button>
+        <button onclick="responder(2, 3, this)">Indiferente</button>
+      </div>
+      <div id="resultado"></div>
+    </section>
+  </main>
+
+  <!-- Botones flotantes -->
+  <a href="https://wa.me/50254330040" class="boton-flotante whatsapp" target="_blank" title="Enviar WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16.1 0.5C7.6 0.5 0.8 7.2 0.8 15.6c0 2.7 0.7 5.2 2 7.4L0 31.5l8.8-2.8c2.1 1.1 4.5 1.7 7.1 1.7 8.5 0 15.3-6.7 15.3-15.1S24.5 0.5 16.1 0.5zm0 27.7c-2.2 0-4.3-0.6-6.1-1.7l-0.4-0.2-5.2 1.7 1.7-5.1-0.3-0.5c-1.2-1.9-1.8-4.1-1.8-6.4 0-6.7 5.6-12.2 12.4-12.2s12.4 5.4 12.4 12.2c0.1 6.6-5.5 12.1-12.7 12.1zm7.1-9.1c-0.4-0.2-2.4-1.2-2.7-1.3-0.4-0.1-0.7-0.2-1 0.2s-1.1 1.3-1.4 1.6c-0.3 0.3-0.5 0.3-0.9 0.1-2.4-1.2-3.9-2.1-5.5-4.7-0.4-0.6 0.4-0.9 1.1-1.9 0.1-0.2 0.1-0.4 0-0.6s-1-2.4-1.4-3.3c-0.4-1-0.8-0.8-1.1-0.8h-0.9c-0.3 0-0.8 0.1-1.2 0.5-0.4 0.4-1.6 1.6-1.6 3.9s1.6 4.5 1.9 4.8c0.2 0.3 3.1 4.9 7.7 6.5 1.1 0.5 2 0.8 2.7 1s1.3 0.1 1.8 0.1c0.6-0.1 1.8-0.7 2-1.4s0.2-1.3 0.2-1.4c-0.1-0.1-0.4-0.2-0.9-0.4z"/>
+    </svg>
+  </a>
+  <a href="carrito.html" class="boton-flotante carrito" title="Ver carrito">🛒</a>
+
+  <script>
+    // Animación aparición textos
+    document.addEventListener("DOMContentLoaded", () => {
+      const textos = document.querySelectorAll(".quienes-texto");
+      textos.forEach((p, i) => {
+        setTimeout(() => {
+          p.classList.add("visible");
+        }, i * 400);
+      });
+    });
+
+    // Trivia respuestas
+    const respuestasCorrectas = [2, 2, 2];
+    const respuestasUsuario = [0, 0, 0];
+
+    function responder(preguntaIndex, opcionIndex, boton) {
+      if (respuestasUsuario[preguntaIndex] !== 0) return; // No cambiar si ya respondida
+
+      respuestasUsuario[preguntaIndex] = opcionIndex;
+
+      // Selecciona los botones de la pregunta para deshabilitar y manejar estilos
+      const botones = document.querySelectorAll('.trivia button');
+      const inicio = preguntaIndex * 3;
+      const fin = inicio + 3;
+
+      for(let i = inicio; i < fin; i++) {
+        botones[i].disabled = true;
+        botones[i].classList.remove('selected');
+      }
+      boton.classList.add('selected');
+
+      if (!respuestasUsuario.includes(0)) {
+        mostrarResultado();
+      }
+    }
+
+    function mostrarResultado() {
+      let correctas = 0;
+      for(let i = 0; i < respuestasUsuario.length; i++) {
+        if (respuestasUsuario[i] === respuestasCorrectas[i]) correctas++;
+      }
+
+      let texto = "";
+      if(correctas === 3) texto = "¡Eres un verdadero fan de Sip and Revive! 🍓✨";
+      else if(correctas === 2) texto = "¡Casi perfecto! Vuelve a repasar nuestra historia 🍃";
+      else texto = "¡Sigue explorando! Hay mucho por descubrir 💡";
+
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.style.display = 'block';
+      resultadoDiv.textContent = texto;
+    }
+  </script>
+</body>
+</html>

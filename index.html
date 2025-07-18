@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sip and Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    .encuesta-container {
+      background: #fff8f0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      padding: 20px;
+    }
+    .encuesta-container h2 {
+      text-align: center;
+      color: #ff5e8c;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      margin-top: 40px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 15px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+    button {
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ff5e8c, #ff9a44, #fcd000);
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/50254330040" class="boton-flotante whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32" aria-hidden="true">
+      <path d="M20.52 3.48A11.944 11.944 0 0012 0C5.372 0 0 5.372 0 12c0 2.115.555 4.09 1.52 5.82L0 24l6.3-1.6A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.26-6.24-3.48-8.52zm-8.44 16.44a9.3 9.3 0 01-5.03-1.5l-.36-.22-3.74.95.98-3.65-.23-.37a9.35 9.35 0 011.5-10.9 9.348 9.348 0 0113.2 0 9.35 9.35 0 010 13.2 9.3 9.3 0 01-6.6 3.19zm5.12-7.66c-.27-.14-1.6-.78-1.85-.86-.24-.09-.41-.14-.58.14-.17.27-.66.85-.8 1.03-.14.17-.28.19-.53.07a6.58 6.58 0 01-1.93-1.19 7.35 7.35 0 01-1.36-1.7c-.14-.24-.01-.36.11-.5.12-.12.27-.28.4-.43.13-.14.17-.24.26-.4.09-.14.04-.26-.02-.38-.07-.12-.58-1.39-.8-1.9-.21-.5-.43-.43-.58-.44-.15-.02-.32-.02-.5-.02-.17 0-.45.07-.68.33-.23.27-.89.87-.89 2.12 0 1.25.91 2.46 1.03 2.63.12.17 1.77 2.7 4.28 3.77.6.26 1.07.42 1.44.54.6.2 1.15.17 1.58.1.48-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.24-.18-.5-.32z"/>
+    </svg>
+  </a>
+
+  <!-- Botón flotante Carrito -->
+  <a href="productos.html#carrito" class="boton-flotante carrito" title="Ver carrito">🛒</a>
+
+  <header>
+    <h1>Sip and Revive</h1>
+    <nav>
+      <ul>
+        <li><a href="Quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html">Ubicación</a></li> <!-- enlace a la nueva página -->
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="img/herbalife.jpg" alt="Imagen principal de Sip and Revive" />
+  </section>
+
+  <!-- Encuesta -->
+  <section class="encuesta-container">
+    <h2>🍊 Encuesta de Bienestar y Nutrición 🍓</h2>
+    <form id="encuesta-form" onsubmit="enviarWhatsApp(event)">
+      <label for="nombre">👤 Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="edad">🎂 Edad:</label>
+      <input type="number" id="edad" required>
+
+      <label for="agua">💧 ¿Tomas suficiente agua al día?</label>
+      <select id="agua" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+        <option value="A veces">A veces</option>
+      </select>
+
+      <label for="alimentacion">🥗 ¿Cómo calificarías tu alimentación?</label>
+      <select id="alimentacion" required>
+        <option value="Muy saludable">Muy saludable</option>
+        <option value="Normal">Normal</option>
+        <option value="Poco saludable">Poco saludable</option>
+      </select>
+
+      <label>✨ ¿Qué te interesa mejorar?</label>
+      <input type="checkbox" id="fisico" value="Físico"> Físico<br>
+      <input type="checkbox" id="mental" value="Mental"> Mental<br>
+      <input type="checkbox" id="ambos" value="Ambos"> Ambos<br>
+
+      <button type="submit">📲 Enviar por WhatsApp</button>
+    </form>
+  </section>
+
+  <script>
+    function enviarWhatsApp(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const edad = document.getElementById('edad').value;
+      const agua = document.getElementById('agua').value;
+      const alimentacion = document.getElementById('alimentacion').value;
+      let intereses = [];
+      if (document.getElementById('fisico').checked) intereses.push("Físico");
+      if (document.getElementById('mental').checked) intereses.push("Mental");
+      if (document.getElementById('ambos').checked) intereses.push("Ambos");
+      const mensaje = `Hola, soy ${nombre}, tengo ${edad} años.
+💧 Tomo agua: ${agua}
+🍎 Alimentación: ${alimentacion}
+✨ Interés en mejorar: ${intereses.join(", ")}`;
+      const numero = "50254330040";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+  <script src="carrito.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,189 @@
+:root {
+  --blanco: #ffffff;
+  --verde: #a8e6cf;
+  --fuccia: #ff7eb9;
+  --morado: #cbaacb;
+  --naranja: #ffd3b6;
+  --amarillo: #ffffb5;
+
+  --gris-claro: #f8f9fa;
+  --texto: #333;
+  --sombra: rgba(0, 0, 0, 0.06);
+  --borde: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: #222;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+header {
+  background-color: var(--blanco);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--verde);
+  box-shadow: 0 2px 8px var(--sombra);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--morado);
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--fuccia);
+  color: var(--blanco);
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hero img {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+section {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: var(--naranja);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  z-index: 1000;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  color: inherit;
+  object-fit: cover;
+}
+
+.boton-flotante.whatsapp {
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 5px;
+}
+
+.boton-flotante.carrito {
+  right: 90px;
+  background-color: #fff9e6;
+  border-top: 2px solid #ffa726;
+  color: #2e7d32;
+  font-size: 1.8rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.boton-flotante svg {
+  width: 32px;
+  height: 32px;
+}
+
+.ubicacion-mapa {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #fffaf4;
+  border-radius: 12px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.ubicacion-mapa p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.contenedor-mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Logo fijo flotante en esquina superior izquierda */
+.logo-flotante {
+  position: fixed;
+  top: 20px;       /* distancia desde arriba */
+  left: 20px;      /* distancia desde la izquierda */
+  width: 60px;     /* tamaño del logo */
+  height: auto;
+  z-index: 10000;  /* que esté encima de todo */
+  cursor: pointer; /* si quieres que sea clickeable */
+  transition: transform 0.3s ease;
+}
+
+.logo-flotante:hover {
+  transform: scale(1.1);
+}

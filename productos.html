@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos - Sip and Revive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #fffef9;
+      color: #333;
+    }
+
+    .contenedor-productos {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .columna {
+      width: 48%;
+    }
+
+    .producto {
+      background: #fff9e6;
+      border: 1px solid #ffa726;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.02);
+    }
+
+    .producto img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+    }
+
+    .producto h3 {
+      color: #2e7d32;
+      margin-top: 10px;
+    }
+
+    .producto button {
+      background-color: #ec407a;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+    }
+
+    .producto button:hover {
+      background-color: #d81b60;
+    }
+
+    .carrito {
+      background-color: #fff9e6;
+      border-top: 2px solid #ffa726;
+      padding: 1rem;
+      margin: 2rem;
+      border-radius: 10px;
+    }
+
+    .carrito h2 {
+      color: #2e7d32;
+    }
+
+    #btn-pedir {
+      background-color: #25d366;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .item-carrito {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .item-carrito button {
+      background-color: transparent;
+      border: none;
+      color: #d32f2f;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .total {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+  <header>
+    <h1>Nuestros Productos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html">Ubicación</a></li> <!-- Enlace corregido -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contenedor-productos">
+      <div class="columna izquierda">
+        <div class="producto">
+          <img src="img/img1.jpg" alt="Tentación De Chocolate">
+          <h3>Tentación de Chocolate</h3>
+          <p>Q40.00</p>
+          <button onclick="agregarAlCarrito('Tentación de Chocolate', 40)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img2.jpg" alt="Infusión Vital">
+          <h3>Infusión Vital</h3>
+          <p>Q25.00</p>
+          <button onclick="agregarAlCarrito('Infusión Vital', 25)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img3.jpg" alt="Pink Panter">
+          <h3>Pink Panter</h3>
+          <p>Q25.00</p>
+          <button onclick="agregarAlCarrito('Pink Panter', 25)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img4.jpg" alt="Banana y Caramelo">
+          <h3>Sip de Banana y Caramelo</h3>
+          <p>Q35.00</p>
+          <button onclick="agregarAlCarrito('Sip de Banana y Caramelo', 35)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img5.jpg" alt="Trasnochada">
+          <h3>Trasnochada</h3>
+          <p>Q50.00</p>
+          <button onclick="agregarAlCarrito('Trasnochada', 50)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="columna derecha">
+        <div class="producto">
+          <img src="img/img6.jpg" alt="Elixir de Manzana">
+          <h3>Elixir de Manzana</h3>
+          <p>Q25.00</p>
+          <button onclick="agregarAlCarrito('Elixir de Manzana', 25)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img7.jpg" alt="Té Chai">
+          <h3>Té Chai</h3>
+          <p>Q25.00</p>
+          <button onclick="agregarAlCarrito('Té Chai', 25)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img8.jpg" alt="Berry Boost">
+          <h3>Berry Boost</h3>
+          <p>Q50.00</p>
+          <button onclick="agregarAlCarrito('Berry Boost', 50)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img9.jpg" alt="Sip de Canela">
+          <h3>Sip de Canela</h3>
+          <p>Q35.00</p>
+          <button onclick="agregarAlCarrito('Sip de Canela', 35)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img10.jpg" alt="Waffles">
+          <h3>Waffles</h3>
+          <p>Q40.00</p>
+          <button onclick="agregarAlCarrito('Waffles', 40)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="img/img11.jpg" alt="Bowl">
+          <h3>Bowl</h3>
+          <p>Q40.00</p>
+          <button onclick="agregarAlCarrito('Bowl', 40)">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p class="total">Total: Q<span id="total">0</span></p>
+      <button id="btn-pedir" onclick="pedirPorWhatsApp()">Pedir por WhatsApp</button>
+    </section>
+  </main>
+
+  <script>
+    const carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      mostrarCarrito();
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      mostrarCarrito();
+    }
+
+    function mostrarCarrito() {
+      const lista = document.getElementById('lista-carrito');
+      const totalSpan = document.getElementById('total');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((producto, index) => {
+        const li = document.createElement('li');
+        li.className = "item-carrito";
+        li.innerHTML = `
+          ${producto.nombre} - Q${producto.precio}
+          <button onclick="eliminarDelCarrito(${index})">✖</button>
+        `;
+        lista.appendChild(li);
+        total += producto.precio;
+      });
+
+      totalSpan.textContent = total;
+    }
+
+    function pedirPorWhatsApp() {
+      if (carrito.length === 0) return alert('Tu carrito está vacío');
+      let mensaje = 'Hola, quiero pedir lo siguiente:%0A';
+      carrito.forEach(p => {
+        mensaje += `- ${p.nombre} (Q${p.precio})%0A`;
+      });
+      const url = `https://wa.me/50254330040?text=${mensaje}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
