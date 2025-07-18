@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visión | Sip and Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f5;
+      color: #333;
+    }
+
+    header {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      color: #cbaacb;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section h2 {
+      color: #cbaacb;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .vision-texto {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    .vision-texto.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sorpresa {
+      text-align: center;
+      margin-top: 50px;
+      padding: 30px;
+      background: #fff9f9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .sorpresa h3 {
+      font-size: 1.4rem;
+      color: #cbaacb;
+      margin-bottom: 15px;
+    }
+
+    .sorpresa button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #a8e6cf, #ff7eb9, #ffd3b6);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .sorpresa button:hover {
+      transform: scale(1.05);
+    }
+
+    .resultado-sorpresa {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #ff7eb9;
+      font-style: italic;
+      transition: all 0.4s ease;
+    }
+
+    .spin {
+      animation: girar 1s linear;
+    }
+
+    @keyframes girar {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .hero img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Botones flotantes */
+    .boton-flotante {
+      position: fixed;
+      bottom: 20px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      line-height: 55px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .boton-flotante:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp {
+      right: 90px;
+      background-color: #25D366;
+    }
+
+    .carrito {
+      right: 20px;
+      background-color: #ff7eb9;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+  <header>
+    <h1>Visión</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html">Ubicación</a></li> <!-- 🔥 CORREGIDO -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌟 Nuestra Visión</h2>
+      <p class="vision-texto">
+        En <strong>Sip and Revive</strong> soñamos con un futuro donde la salud y la alegría se tomen de la mano 🍹💚. Queremos que cada sorbo que compartas con nosotros te inspire a vivir más feliz, más ligero y más tú.
+      </p>
+      <p class="vision-texto">
+        Imaginamos un mundo donde nuestras bebidas sean parte de tu rutina, no por obligación, ¡sino porque te encantan! Que te motiven a sonreír, a cuidarte, a compartir buenos momentos con quienes más quieres.
+      </p>
+      <p class="vision-texto">
+        Nuestra visión es ser tu marca favorita cuando pienses en bienestar con sabor: fresca, divertida, auténtica. Queremos crecer contigo, llegar más lejos, y seguir llenando tu día de energía positiva. 🌈🌞
+      </p>
+    </section>
+
+    <!-- Bebida sorpresa -->
+    <div class="sorpresa">
+      <h3>🍹 ¿No sabes qué tomar hoy?</h3>
+      <button id="sorpresaBtn">Descubre tu bebida ideal</button>
+      <p id="resultadoBebida" class="resultado-sorpresa"></p>
+    </div>
+  </main>
+
+  <!-- Botones flotantes -->
+  <a href="https://wa.me/50254330040" class="boton-flotante whatsapp" target="_blank" title="Enviar WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28" style="margin: 13px;">
+      <path d="M16.1 0.5C7.6 0.5 0.8 7.2 0.8 15.6c0 2.7 0.7 5.2 2 7.4L0 31.5l8.8-2.8c2.1 1.1 4.5 1.7 7.1 1.7 8.5 0 15.3-6.7 15.3-15.1S24.5 0.5 16.1 0.5zm0 27.7c-2.2 0-4.3-0.6-6.1-1.7l-0.4-0.2-5.2 1.7 1.7-5.1-0.3-0.5c-1.2-1.9-1.8-4.1-1.8-6.4 0-6.7 5.6-12.2 12.4-12.2s12.4 5.4 12.4 12.2c0.1 6.6-5.5 12.1-12.7 12.1zm7.1-9.1c-0.4-0.2-2.4-1.2-2.7-1.3-0.4-0.1-0.7-0.2-1 0.2s-1.1 1.3-1.4 1.6c-0.3 0.3-0.5 0.3-0.9 0.1-2.4-1.2-3.9-2.1-5.5-4.7-0.4-0.6 0.4-0.9 1.1-1.9 0.1-0.2 0.1-0.4 0-0.6s-1-2.4-1.4-3.3c-0.4-1-0.8-0.8-1.1-0.8h-0.9c-0.3 0-0.8 0.1-1.2 0.5-0.4 0.4-1.6 1.6-1.6 3.9s1.6 4.5 1.9 4.8c0.2 0.3 3.1 4.9 7.7 6.5 1.1 0.5 2 0.8 2.7 1s1.3 0.1 1.8 0.1c0.6-0.1 1.8-0.7 2-1.4s0.2-1.3 0.2-1.4c-0.1-0.1-0.4-0.2-0.9-0.4z"/>
+    </svg>
+  </a>
+
+  <a href="carrito.html" class="boton-flotante carrito" title="Ver carrito">
+    🛒
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const textos = document.querySelectorAll(".vision-texto");
+      textos.forEach((p, i) => {
+        setTimeout(() => {
+          p.classList.add("visible");
+        }, i * 400);
+      });
+
+      const btn = document.getElementById("sorpresaBtn");
+      const resultado = document.getElementById("resultadoBebida");
+
+      const bebidas = [
+        "🍓 Tentación de Chocolate",
+        "🌿 Infusión Vital",
+        "🍍 Pink Panter",
+        "🍒 Sip de Banana y Caramelo",
+        "🍑 Trasnochada",
+        "🥭 Elixir de Manzana",
+        "🍋 Té Chai",
+        "🍓 Berry Boost",
+        "🌿 Sip de Caramelo",
+        "🍍 Waffles",
+        "🍒 Bowl"
+      ];
+
+      btn.addEventListener("click", () => {
+        btn.classList.add("spin");
+        resultado.textContent = "";
+        setTimeout(() => {
+          const elegido = bebidas[Math.floor(Math.random() * bebidas.length)];
+          resultado.textContent = `Tu bebida ideal es: ${elegido}`;
+          btn.classList.remove("spin");
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
