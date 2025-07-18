@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubicación - Sip and Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #fffef9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem 0 0.3rem;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #2e7d32;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+      margin: 0.5rem 0 1.5rem 0;
+      font-weight: 600;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #ec407a;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #d81b60;
+    }
+
+    .ubicacion-container {
+      background: #fff9e6;
+      border: 1px solid #ffa726;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 1rem auto 2rem;
+      max-width: 900px;
+    }
+    .ubicacion-container h2 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 32px;
+      margin-top: 0;
+    }
+    .ubicacion-container p a {
+      color: #ec407a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .ubicacion-container p a:hover {
+      color: #d81b60;
+    }
+
+    /* Botones flotantes */
+    .boton-flotante {
+      position: fixed;
+      bottom: 20px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .boton-flotante.whatsapp {
+      right: 90px;
+      background-color: #25d366;
+    }
+    .boton-flotante.whatsapp:hover {
+      background-color: #1ebe57;
+    }
+    .boton-flotante.whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    .boton-flotante.carrito {
+      right: 20px;
+      background-color: #fff9e6;
+      border: 1px solid #ffa726;
+      font-size: 24px;
+      color: #2e7d32;
+      text-align: center;
+      line-height: 55px;
+    }
+    .boton-flotante.carrito:hover {
+      background-color: #ffeab8;
+    }
+
+    iframe {
+      border: 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/50254330040" class="boton-flotante whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.944 11.944 0 0012 0C5.372 0 0 5.372 0 12c0 2.115.555 4.09 1.52 5.82L0 24l6.3-1.6A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.26-6.24-3.48-8.52zm-8.44 16.44a9.3 9.3 0 01-5.03-1.5l-.36-.22-3.74.95.98-3.65-.23-.37a9.35 9.35 0 011.5-10.9 9.348 9.348 0 0113.2 0 9.35 9.35 0 010 13.2 9.3 9.3 0 01-6.6 3.19zm5.12-7.66c-.27-.14-1.6-.78-1.85-.86-.24-.09-.41-.14-.58.14-.17.27-.66.85-.8 1.03-.14.17-.28.19-.53.07a6.58 6.58 0 01-1.93-1.19 7.35 7.35 0 01-1.36-1.7c-.14-.24-.01-.36.11-.5.12-.12.27-.28.4-.43.13-.14.17-.24.26-.4.09-.14.04-.26-.02-.38-.07-.12-.58-1.39-.8-1.9-.21-.5-.43-.43-.58-.44-.15-.02-.32-.02-.5-.02-.17 0-.45.07-.68.33-.23.27-.89.87-.89 2.12 0 1.25.91 2.46 1.03 2.63.12.17 1.77 2.7 4.28 3.77.6.26 1.07.42 1.44.54.6.2 1.15.17 1.58.1.48-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.24-.18-.5-.32z"/>
+    </svg>
+  </a>
+
+  <!-- Botón flotante Carrito -->
+  <a href="productos.html#carrito" class="boton-flotante carrito" title="Ver carrito">🛒</a>
+
+  <header>
+    <h1>Sip and Revive</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html" class="active">Ubicación</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="ubicacion-container">
+    <h2>📍 Nuestra Ubicación</h2>
+    <div style="text-align:center; margin-bottom:20px;">
+      <a href="https://maps.app.goo.gl/x2k2vtagomGSMtUS6" target="_blank" style="display:inline-block; width:100%; text-decoration:none;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.398375594805!2d-90.5139612855782!3d14.634914789759315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1e144aa3ff1%3A0x3b2f5fd9b49dc75a!2sGuatemala%20City!5e0!3m2!1ses!2sgt!4v1713286172123!5m2!1ses!2sgt"
+          width="100%"
+          height="300"
+          style="pointer-events:none;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </a>
+    </div>
+
+    <div style="text-align:center;">
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/sipandrevive" target="_blank">@sipandrevive</a></p>
+      <p><strong>Facebook:</strong> <a href="https://facebook.com/SipRevive" target="_blank">Sip Revive</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/50254330040" target="_blank">502 5433 0040</a></p>
+      <p><strong>Embajadoras:</strong> Bedelcy Monroy, Bedelcy Ruballos, Teri Osorio</p>
+    </div>
+  </section>
+
+</body>
+</html>

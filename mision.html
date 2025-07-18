@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misión | Sip and Revive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* TÍTULO alineado como el texto */
+    .titulo-seccion {
+      max-width: 700px;
+      margin: 40px auto 10px auto;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #333;
+      text-align: left;
+    }
+
+    /* Animación para el texto */
+    .mision-texto {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: left; /* alineado como en la imagen */
+    }
+
+    .mision-texto.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Estilos metas personales */
+    .metas-personales {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff8f0;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-family: 'Playfair Display', serif;
+      color: #333;
+      text-align: center;
+    }
+
+    .metas-personales h3 {
+      color: #ff5e8c;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    .metas-personales input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+    }
+
+    .metas-personales input[type="text"]::placeholder {
+      text-align: center;
+    }
+
+    .metas-personales button {
+      width: 100%;
+      background: linear-gradient(45deg, #ff5e8c, #ff9a44, #fcd000);
+      color: white;
+      font-size: 1.2rem;
+      padding: 12px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .metas-personales button:hover {
+      transform: scale(1.05);
+    }
+
+    #metaGuardada {
+      margin-top: 10px;
+      color: #d6336c;
+      font-weight: 500;
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  
+  <a href="index.html" title="Ir al inicio">
+  <img src="img/sip.jpg" alt="Sip and Revive Logo" class="logo-flotante" />
+</a>
+
+  <header>
+    <h1>Misión</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Quienes_somos.html">Quiénes Somos</a></li>
+        <li><a href="mision.html">Misión</a></li>
+        <li><a href="vision.html">Visión</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="indo.html">Ubicación</a></li> <!-- Aquí está el enlace corregido -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="titulo-seccion">🌈 Nuestra Misión</h2>
+      <p class="mision-texto">
+        En <strong>Sip and Revive</strong>, nuestra misión es llenar tu día de sabor y salud, creando bebidas naturales, refrescantes y llenas de amor 🍓💧. Queremos que cada sorbo te conecte con tu mejor versión.
+      </p>
+      <p class="mision-texto">
+        Trabajamos con pasión para ofrecer productos que no solo cuidan tu cuerpo, sino que también alegran tu alma y animan tus momentos. ¡Porque el bienestar también se disfruta! 🎉
+      </p>
+      <p class="mision-texto">
+        Estamos aquí para acompañarte en tu camino hacia una vida más sana, divertida y llena de energía positiva. ¡Salud por ti y por cada instante que revivimos juntos! 🥤✨
+      </p>
+    </section>
+
+    <!-- Meta personal interactiva -->
+    <div class="metas-personales">
+      <h3>🌟 ¿Cuál es tu meta de bienestar?</h3>
+      <input type="text" id="metaInput" placeholder="Escribe tu meta aquí..." />
+      <button id="guardarMetaBtn" type="button">Guardar meta</button>
+      <p id="metaGuardada"></p>
+    </div>
+  </main>
+
+  <!-- Botones flotantes -->
+  <a href="https://wa.me/50254330040" class="boton-flotante whatsapp" target="_blank" title="Enviar WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="28" height="28" style="margin: 13px;">
+      <path d="M16.1 0.5C7.6 0.5 0.8 7.2 0.8 15.6c0 2.7 0.7 5.2 2 7.4L0 31.5l8.8-2.8c2.1 1.1 4.5 1.7 7.1 1.7 8.5 0 15.3-6.7 15.3-15.1S24.5 0.5 16.1 0.5zm0 27.7c-2.2 0-4.3-0.6-6.1-1.7l-0.4-0.2-5.2 1.7 1.7-5.1-0.3-0.5c-1.2-1.9-1.8-4.1-1.8-6.4 0-6.7 5.6-12.2 12.4-12.2s12.4 5.4 12.4 12.2c0.1 6.6-5.5 12.1-12.7 12.1zm7.1-9.1c-0.4-0.2-2.4-1.2-2.7-1.3-0.4-0.1-0.7-0.2-1 0.2s-1.1 1.3-1.4 1.6c-0.3 0.3-0.5 0.3-0.9 0.1-2.4-1.2-3.9-2.1-5.5-4.7-0.4-0.6 0.4-0.9 1.1-1.9 0.1-0.2 0.1-0.4 0-0.6s-1-2.4-1.4-3.3c-0.4-1-0.8-0.8-1.1-0.8h-0.9c-0.3 0-0.8 0.1-1.2 0.5-0.4 0.4-1.6 1.6-1.6 3.9s1.6 4.5 1.9 4.8c0.2 0.3 3.1 4.9 7.7 6.5 1.1 0.5 2 0.8 2.7 1s1.3 0.1 1.8 0.1c0.6-0.1 1.8-0.7 2-1.4s0.2-1.3 0.2-1.4c-0.1-0.1-0.4-0.2-0.9-0.4z"/>
+    </svg>
+  </a>
+
+  <a href="carrito.html" class="boton-flotante carrito" title="Ver carrito">
+    🛒
+  </a>
+
+  <script>
+    // Animar la aparición del texto
+    document.addEventListener("DOMContentLoaded", () => {
+      const textos = document.querySelectorAll(".mision-texto");
+      textos.forEach((p, i) => {
+        setTimeout(() => {
+          p.classList.add("visible");
+        }, i * 400);
+      });
+    });
+
+    // Enviar meta a WhatsApp
+    document.getElementById("guardarMetaBtn").addEventListener("click", () => {
+      const input = document.getElementById("metaInput");
+      const meta = input.value.trim();
+      const resultado = document.getElementById("metaGuardada");
+
+      if (meta) {
+        const mensaje = encodeURIComponent("¡Hola! Mi meta personal es: " + meta);
+        const url = "https://wa.me/50254330040?text=" + mensaje;
+        window.open(url, '_blank');
+        resultado.textContent = "¡Meta enviada a WhatsApp!";
+        input.value = "";
+      } else {
+        resultado.textContent = "Por favor, escribe una meta antes de enviar.";
+      }
+    });
+  </script>
+</body>
+</html>
